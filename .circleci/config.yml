@@ -6,7 +6,7 @@ jobs:
     resource_class: medium
     working_directory: ~/
     shell: /bin/bash -eo pipefail -l
-    parallelism: 1
+    parallelism: 1  
     steps:
     - attach_workspace:
         at: /home/cassandra
@@ -16,6 +16,7 @@ jobs:
           # reminder: this code (along with all the steps) is independently executed on every circle container
           # so the goal here is to get the circleci script to return the tests *this* container will run
           # which we do via the `circleci` cli tool.
+          # bsfh minor change just to see if this will work...
 
           rm -fr ~/cassandra-dtest/upgrade_tests
           echo "***java tests***"
